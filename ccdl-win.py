@@ -1077,7 +1077,7 @@ def write_driver_xml(pkgJson: dict, pkgDir: str, reqLang: list[str]) -> None:
     tree = ET.ElementTree(driverInfo)
     ET.indent(tree, space="    ", level=0)
 
-    fileName = pkgJson["SAPCode"] + "-" + "Driver.xml"
+    fileName = pkgJson["SAPCode"] + "-" + "driver.xml"
     xml_file = os.path.join(pkgDir, fileName)
     tree.write(xml_file, encoding="utf-8", xml_declaration=True)
 
@@ -1111,7 +1111,7 @@ def product_download(prodInfo: list, allProducts: dict, reqLang: list) -> None:
         write_driver_xml(appJsonData, cfg['productDir'], reqLang)
 
     print("\nCreating Application.json file...")
-    create_json(os.path.join(pkgDir, "Application.json"), appJsonData)
+    create_json(os.path.join(pkgDir, "application.json"), appJsonData)
 
     for url in urls:
         url = cdn + url
